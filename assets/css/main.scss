@@ -13,6 +13,28 @@ h1 {
   display: flex;
   justify-content: center;
 }
+ul {
+  display: flex;
+  justify-content: center;
+}
+li {
+  margin-left: 2%;
+  margin-right: 2%;
+}
+.copyright_content {
+  display: flex;
+  justify-content: center;
+}
+footer {
+  height: 240px;
+  background-color: #212121;
+}
+footer > div {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  height: 100%;
+}
 
 // Index vue
 // Grid
@@ -27,11 +49,53 @@ h1 {
   font-size: 30px;
   text-align: center;
 }
+.image-project-presentation {
+  max-height: 150px;
+  justify-items: center;
+}
+.logo-social-network {
+  height: 40px;
+  width: auto;
+}
+.about-picture {
+  margin-right: 2%;
+  background-color: #212121;
+  border-radius: 16px;
+  border: #ababab solid 2px;
+}
+.about-picture > img {
+  border-radius: 16px;
+}
+
+.about-text {
+  margin-left: 2%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+.presentation {
+  margin-top: 8%;
+  display: flex;
+  justify-content: center;
+}
+.project-image-main {
+  background-color: red;
+  max-width: 400px;
+}
 
 // Single vue
 .project-image {
-  height: 150px;
-  width: auto;
+  display: flex;
+  justify-content: center;
+}
+.project-image > img {
+  display: flex;
+  justify-content: center;
+  max-height: 400px;
+}
+.project-image > img {
+  display: flex;
+  justify-content: center;
 }
 .technos-logo {
   height: 75px;
@@ -40,4 +104,21 @@ h1 {
 .github-logo {
   height: 75px;
   width: auto;
+}
+.back-button {
+  padding: 1%;
+  background-color: #212121;
+  border-radius: 20px;
+  border: #ababab solid 2px;
+}
+.back-button:hover {
+  border: #212121 solid 2px;
+}
+.div-title {
+  display: flex;
+  justify-content: center;
+}
+.description {
+  margin-left: 4%;
+  margin-right: 4%;
 }
