@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// All
+* {
+  color: white;
+}
+body {
+  background-color: #2e3135;
+}
+h1 {
+  display: flex;
+  justify-content: center;
+}
+
+// Index vue
+// Grid
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+}
+.grid-item {
+  border: 4px solid #1b1d1f;
+  margin: 8px;
+  font-size: 30px;
+  text-align: center;
+}
+
+// Single vue
+.project-image {
+  height: 150px;
+  width: auto;
+}
+.technos-logo {
+  height: 75px;
+  width: auto;
+}
+.github-logo {
+  height: 75px;
+  width: auto;
+}
