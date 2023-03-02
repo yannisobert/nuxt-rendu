@@ -124,7 +124,14 @@ footer > div {
   display: flex;
   justify-content: center;
 }
-.description {
+.project-infos {
   margin-left: 4%;
   margin-right: 4%;
+}
+
+.project-infos div {
+  margin-top: 4%;
+}
+.project-infos div h3 {
+  margin-bottom: 1%;
 }

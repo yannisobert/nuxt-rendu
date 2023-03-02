@@ -4,14 +4,14 @@
     <NuxtLink v-if="slugPrec" class="back-button" :to="'/projects/' + slugPrec">Projet précédent</NuxtLink>
     <NuxtLink v-if="slugSuiv" class="back-button" :to="'/projects/' + slugSuiv">Projet suivant</NuxtLink>
   </div>
-  <div v-if="project">
+  <div v-if="project" class="project-infos">
     <div class="div-title text-3xl">
       <h3>Projet : {{ project.data[0].text }}</h3>
     </div>
     <div class="project-image">
     <img class="project-image"  :src="project.data[0].image.url"/>
     </div>
-    <div class="description">
+    <div>
       <h3 class="text-2xl">Description :</h3>
       <p>{{ project.data[0].description }}</p>
     </div>
@@ -26,9 +26,9 @@
     </div>
     <div>
       <h3>Technos :</h3>
-      <div v-for="(project, index) in project.data[0].technos" :key="index">
+      <p v-for="(project, index) in project.data[0].technos" :key="index">
         <img class="technos-logo" :src="project.logo.url" alt="">
-      </div>
+      </p>
     </div>
   </div>
 </template>
