@@ -31,6 +31,13 @@
     </div>
   </div>
 
+  <div v-if="technos" class="technos">
+    <button @click="filterReset()">All by project type</button>
+    <div v-for="(techno, index) in technos.data" :key="index">
+      <button @click="filterFunction(techno.id)">{{ techno.technos }}</button>
+    </div>
+  </div>
+
   <div v-if="projectsPerso">
     <h2>Projets perso</h2>
     <div class="grid-container">
@@ -79,14 +86,31 @@ const projects = ref();
 const projectsPerso = ref();
 const projectsPro = ref();
 const projectsIIM = ref();
+const technos = ref();
 
 onMounted(async () => {
-  projects.value = await find('projects', { populate: 'deep' });
+  technos.value = await find('technos', { populate: 'deep' });
   projectsPerso.value = await find('projects',  {filters: {types: {$eq: "perso"}}, populate: 'deep'});
   projectsPro.value = await find('projects',  {filters: {types: {$eq: "pro"}}, populate: 'deep'});
   projectsIIM.value = await find('projects',  {filters: {types: {$eq: "iim"}}, populate: 'deep'});
-  //console.log(projects.value.data)
 });
 
+function filterFunction(types) {
+  onNuxtReady(async () => {
+    projectsPerso.value = await find('projects',  {filters: {types: {$eq: "perso"}, technos: [types]}, populate: 'deep'});
+    projectsPro.value = await find('projects',  {filters: {types: {$eq: "pro"}, technos: [types]}, populate: 'deep'});
+    projectsIIM.value = await find('projects',  {filters: {types: {$eq: "iim"}, technos: [types]}, populate: 'deep'});
+  });
+
+}
+
+function filterReset() {
+  onNuxtReady(async () => {
+    projectsPerso.value = await find('projects',  {filters: {types: {$eq: "perso"}}, populate: 'deep'});
+    projectsPro.value = await find('projects',  {filters: {types: {$eq: "pro"}}, populate: 'deep'});
+    projectsIIM.value = await find('projects',  {filters: {types: {$eq: "iim"}}, populate: 'deep'});
+  });
+
+}
 
 </script>
