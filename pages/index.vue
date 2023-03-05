@@ -71,12 +71,14 @@
 
   <div v-if="projectsIIM">
     <h2>Projets IIM</h2>
-    <div v-for="(projectIIM, index) in projectsIIM.data" :key="index">
+    <div class="grid-container">
+    <div v-for="(projectIIM, index) in projectsIIM.data" :key="index" class="grid-item">
       <NuxtLink :to="'/projects/' + projectIIM.slug">
+        <img class="project-image"  :src="projectIIM.image.url"/>
         {{ projectIIM.slug }}
       </NuxtLink>
-      <img class="project-image"  :src="projectIIM.image.url"/>
     </div>
+  </div>
   </div>
 </template>
 
